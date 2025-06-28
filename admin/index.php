@@ -171,3 +171,44 @@ $popular_articles = $stmt->fetchAll();
                             <?php foreach ($popular_searches as $search): ?>
                             <div class="search-item">
                                 <span class="search-term"><?= htmlspecialchars($search['search_term']) ?></span>
+                                <span class="search-count"><?= number_format($search['search_count']) ?></span>
+                            </div>
+                            <?php endforeach; ?>
+                        </div>
+                        <?php else: ?>
+                        <p class="no-data">Henüz arama yapılmamış.</p>
+                        <?php endif; ?>
+                    </div>
+                </div>
+                
+                <!-- Hızlı İşlemler -->
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <h3>Hızlı İşlemler</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="quick-actions">
+                            <a href="articles.php?action=create" class="quick-action-btn">
+                                <span class="icon">📝</span>
+                                <span>Yeni Makale</span>
+                            </a>
+                            <a href="categories.php?action=create" class="quick-action-btn">
+                                <span class="icon">📁</span>
+                                <span>Yeni Kategori</span>
+                            </a>
+                            <a href="articles.php" class="quick-action-btn">
+                                <span class="icon">📄</span>
+                                <span>Makaleleri Yönet</span>
+                            </a>
+                            <a href="categories.php" class="quick-action-btn">
+                                <span class="icon">🗂️</span>
+                                <span>Kategorileri Yönet</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
